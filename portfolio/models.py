@@ -1,6 +1,4 @@
 from django.db import models
-
-# Create your models here.
 from django.db.models.fields import CharField, URLField
 from django.db.models.fields.files import ImageField
 
