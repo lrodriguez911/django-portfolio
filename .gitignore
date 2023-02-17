@@ -1,7 +1,7 @@
-media
+venv
 
 **/__pycache__
 
-venv
+media
 
 db.sqlite3
