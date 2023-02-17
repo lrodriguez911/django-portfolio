@@ -1,12 +1,64 @@
-{% extends 'layout.html' %} {% block content %}
-<h1>Home</h1>
+{% extends 'layout.html' %} {% block content %} {% load static %}
 
-{% for project in projects %}
+<header class="row bg-black">
+  <div class="col-md-4">
+    <img src="{% static 'portfolio/perfillinkedin.png' %}" class="w-100" />
+  </div>
+  <div class="col-md-8 my-auto">
+    <h1>I am <strong>Lucas M. Rodriguez</strong></h1>
+    <h3>I am a Python FullStack Developer</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quasi
+      facilis dicta accusantium sint consectetur, facere consequuntur porro
+      asperiores modi eligendi odit nemo tempora in. Earum, cumque animi ab
+      harum mollitia illum aspernatur quidem nihil, ut nulla quam laboriosam
+      molestias quas neque magnam expedita, natus beatae cum. Suscipit
+      blanditiis incidunt sapiente ea aut magni voluptas eveniet culpa nihil
+      corporis, excepturi reiciendis voluptates delectus nobis veniam,
+      necessitatibus fugit doloremque! Animi exercitationem sapiente soluta
+      reiciendis est consequuntur quia quis voluptatum alias totam vitae ducimus
+      eveniet recusandae hic eum ea necessitatibus, libero deserunt perferendis
+      ex rem ipsa rerum quas magnam? Illo, consequuntur accusamus.
+    </p>
+    <a
+      href="{% static 'portfolio/cv-lucas-rodriguez-en.pdf' %}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-primary btn-lg rounded-0 my-3"
+      >Download CV</a
+    >
+  </div>
+</header>
 
-<h2>{{project.title}}</h2>
-<p>{{project.description}}</p>
-<img src="{{project.image.url}}" alt="image of {{project.title}}" />
+<div class="row my-4 text-center">
+  <h3>My Projects</h3>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, nesciunt.
+  </p>
 
-{% if project.url %}
-<a href="{{project.url}}">{{project.url}}</a>
-{% endif %} {% endfor %} {% endblock content %}
+  {% for project in projects %}
+
+  <div class="col-md-4 p-4">
+    <div class="card bg-black">
+      <img
+        src="{{project.image.url}}"
+        alt="image of {{project.title}}"
+        class="card-img-top"
+      />
+      <div class="card-body">
+        <h2>{{project.title}}</h2>
+        <p>{{project.description}}</p>
+
+        {% if project.url %}
+        <a
+          href="{{project.url}}"
+          class="btn btn-light rounded-0 btn-sm"
+          target="_blank"
+          >{{project.url}}</a
+        >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %} {% endblock content %}
+</div>
